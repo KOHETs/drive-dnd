@@ -1,0 +1,7 @@
+<div class="container" cdkDropListGroup>
+  <app-sidebar class="sidebar" (drop)="drop($event)"></app-sidebar>
+  <main class="content">
+    <app-drive-list (drop)="drop($event)"></app-drive-list>
+    <pre>{{ { fromTo: fromTo } | json }}</pre>
+  </main>
+</div>

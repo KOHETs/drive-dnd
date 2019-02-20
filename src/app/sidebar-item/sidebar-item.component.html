@@ -1,0 +1,13 @@
+<cdk-drop-list
+  class="container"
+  [class.droppable]="onDrag"
+  cdkDropList
+  [cdkDropListData]="item"
+  (cdkDropListEntered)="setOnDragTrue($event)"
+  (cdkDropListExited)="setOnDragFalse()"
+  (cdkDropListDropped)="handleDrop($event)"
+>
+  <p>
+    {{ item?.name }}
+  </p>
+</cdk-drop-list>

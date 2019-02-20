@@ -1,0 +1,28 @@
+<cdk-drop-list
+  [cdkDropListData]="driveItem"
+  (cdkDropListDropped)="handleDrop($event)"
+  (cdkDropListEntered)="setOnDragTrue($event)"
+  (cdkDropListExited)="setOnDragFalse()"
+  [cdkDropListDisabled]="driveItem.type === 'file'"
+>
+  <div
+    class="container"
+    [class.droppable]="onDrag"
+    cdkDrag
+    [cdkDragData]="driveItem"
+    (cdkDragStarted)="isDragging = true"
+    (cdkDragEnded)="isDragging = false"
+  >
+    <p>
+      {{ driveItem?.name }}
+      <img *cdkDragPreview src="assets/icon.svg" />
+      <span *cdkDragPlaceholder></span>
+    </p>
+  </div>
+</cdk-drop-list>
+
+<div class="container" *ngIf="isDragging">
+  <p>
+    {{ driveItem?.name }}
+  </p>
+</div>

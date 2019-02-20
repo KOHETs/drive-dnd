@@ -1,0 +1,9 @@
+.container {
+  display: block;
+  border: 1px solid gray;
+  user-select: none;
+  padding: 0 10px;
+  &.droppable {
+    background-color: rgba(lightblue, 0.5);
+  }
+}
